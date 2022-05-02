@@ -1,10 +1,41 @@
-def multiply(*numbers):
-    total = 1
-    for number in numbers:
-        total *= number
-    return total
+class Point:
+    deafult_color = "red"
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    @classmethod
+    def zero(cls):
+        return cls(0, 0)
+
+    def __str__(self):
+        return f" ({self.x} , {self.y})"
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    def __gt__(self, other):
+        return self.x > other.x and self.y > other.y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def draw(self):
+        print(f"Draw ({self.x} , {self.y})")
 
 
-print("start")
+# Point.deafult_color = "Yellow"
+# point = Point(1, 2)
+# print(point.deafult_color)
+# print(Point.deafult_color)
+# point.draw()
+# another = Point(3, 4)
+# print(another.deafult_color)
+# another.draw()
 
-print(multiply(1, 2, 3))
+point = Point(1, 2)
+other = Point(2, 3)
+print(point + other)
+
+point.draw()
