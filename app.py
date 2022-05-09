@@ -58,24 +58,101 @@
 # product = Product(-10)
 
 # print(product.price)
-class Animal:
-    def __init__(self):
-        self.age = 1
+# class Animal:
+#     def __init__(self):
+#         print("Animal Constractor")
+#         self.age = 1
 
-    def eat(self):
-        print("eat")
-
-
-class Mammal(Animal):
-    def walk(self):
-        print("walk")
+#     def eat(self):
+#         print("eat")
 
 
-class Fish(Animal):
-    def swim(self):
-        print("swim")
+# class Mammal(Animal):
+#     def __init__(self):
+#         super().__init__()
+#         print("Mammal Constractor")
+#         self.weight = 2
+
+#     def walk(self):
+#         print("walk")
 
 
-m = Mammal()
+# class Fish(Animal):
+#     def swim(self):
+#         print("swim")
 
-m.eat()
+
+# m = Mammal()
+
+# print(m.age)
+# print(m.weight)
+
+
+# class InvalidOperationError(Exception):
+#     pass
+
+
+# class Stream(ABC):
+#     def __init__(self):
+#         self.opened = False
+
+#     def open(self):
+#         if self.opened:
+#             raise InvalidOperationError("Stream is already open")
+#         self.opened = True
+
+#     def close(self):
+#         if not self.opened:
+#             raise InvalidOperationError("Stream is already close")
+#         self.opened = False
+
+#     @abstractmethod
+#     def read(self):
+#         pass
+
+
+# class FileStream(Stream):
+#     def read(self):
+#         print("Read Data from file")
+
+
+# class NetworkStream(Stream):
+#     def read(self):
+#         print("Read Data from network")
+
+
+# class MemoryStream(Stream):
+#     def read(self):
+#         print("Reading data from a memory stream")
+
+
+# stream = MemoryStream()
+
+from abc import ABC, abstractmethod
+
+
+class UIControl(ABC):
+    @abstractmethod
+    def draw(self):
+        pass
+
+
+class TextBox(UIControl):
+    def draw(self):
+        print("TextBox")
+
+
+class DropDownList(UIControl):
+    def draw(self):
+        print("DropDownList")
+
+
+def draw(controls):
+    for control in controls:
+        control.draw()
+
+
+ddl = DropDownList()
+textbox = TextBox()
+print(isinstance(ddl, UIControl))
+draw([ddl, textbox])
