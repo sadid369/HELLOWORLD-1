@@ -127,5 +127,45 @@
 
 
 # stream = MemoryStream()
-from ecommerce.shopping import sales
-sales.calc_tax()
+# from ecommerce.shopping import sales
+# sales.calc_tax()
+# from pathlib import Path
+# path = Path("ecommerce")
+# paths = [p for p in path.iterdir() if p.is_dir]
+# py_files = [p for p in path.rglob("*.py")]
+# print(py_files)
+
+# from pathlib import Path
+# from time import ctime
+# path = Path("ecommerce/__init__.py")
+
+# # print(ctime(path.stat().st_ctime))
+# print(path.read_text())
+# import csv
+
+# with open("data.csv", "w") as file:
+#     writer = csv.writer(file)
+#     writer.writerow(["transaction_id", "product_id", "price"])
+#     writer.writerow(["1000", "1", "5"])
+#     writer.writerow(["1001", "2", "15"])
+# with open("data.csv") as file:
+#     reader = csv.reader(file)
+#     # print(list(reader))
+#     for row in reader:
+#         print(row)
+
+# import json
+# from pathlib import Path
+# movies = [
+#     {"id": 1, "title": "Terminator", "year": 1989},
+#     {"id": 2, "title": "Kindergarten", "year": 1993}
+# ]
+# data = json.dumps(movies)
+
+# Path("movies.json").write_text(data)
+import json
+from pathlib import Path
+data = Path("movies.json").read_text()
+movies = json.loads(data)
+
+print(movies[0]["title"])
