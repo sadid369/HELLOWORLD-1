@@ -163,9 +163,50 @@
 # data = json.dumps(movies)
 
 # Path("movies.json").write_text(data)
-import json
-from pathlib import Path
-data = Path("movies.json").read_text()
-movies = json.loads(data)
+# import sqlite3
+# import json
+# from pathlib import Path
 
-print(movies[0]["title"])
+
+# with sqlite3.connect("db.sqlite3") as conn:
+#     command = "SELECT * FROM Movies"
+
+#     cursor = conn.execute(command)
+#     # for row in cursor:
+#     #     print(row)
+#     movies = cursor.fetchall()
+#     print(movies)
+
+# import time
+
+
+# def send_email():
+#     for i in range(10000):
+#         pass
+
+
+# start = time.time()
+# send_email()
+# end = time.time()
+
+# duration = end - start
+
+# print(duration)
+
+# from datetime import datetime
+# import time
+# dt = datetime(2018, 1, 1)
+# dt = datetime.now()
+# dt = datetime.strptime("2018/01/01", "%Y/%m/%d")
+# dt = datetime.fromtimestamp(time.time())
+# print(f"{dt.year}/{dt.month}")
+
+# import random
+
+# print(random.random())
+# print(random.randint(1, 10))
+# print(random.choice([1, 2, 3, 4, 5]))
+import webbrowser
+print("dev")
+
+webbrowser.open("https://replit.com/@appbrewery")
