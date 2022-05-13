@@ -206,7 +206,14 @@
 # print(random.random())
 # print(random.randint(1, 10))
 # print(random.choice([1, 2, 3, 4, 5]))
-import webbrowser
-print("dev")
+# import requests
+# import webbrowser
+# print("dev")
 
-webbrowser.open("https://replit.com/@appbrewery")
+# webbrowser.open("https://replit.com/@appbrewery")
+
+import requests
+
+response = requests.get("http://google.com")
+
+print(response)
